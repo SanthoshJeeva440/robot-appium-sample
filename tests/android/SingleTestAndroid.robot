@@ -2,18 +2,21 @@
 Library    AppiumLibrary
 Library    String
 Resource   ../common/KeywordsFile.robot
-Test Setup  Open app
-Test Teardown   Close app
 Library      SeleniumLibrary    run_on_failure=SeleniumLibrary.Capture Page Screenshot
 
 *** Variables ***
 ${mode}     --headless
 
 *** Test Cases ***
-Test Wiki app
+Test web
     Log To Console    Test
     Launch Browser
     Close Web Browser
+
+Test Mob
+    Open app
+    Close app
+
 
 *** Keywords ***
 Open app
