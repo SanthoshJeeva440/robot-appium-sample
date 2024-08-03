@@ -5,13 +5,14 @@ Resource   ../common/KeywordsFile.robot
 Library      SeleniumLibrary    run_on_failure=SeleniumLibrary.Capture Page Screenshot
 
 *** Variables ***
-${mode}     --headless
+&{capabilities}     browser=chrome
+${test_url}     https://bstackdemo.com
 
 *** Test Cases ***
 Test web
     Log To Console    Test
-    Launch Browser
-    Close Web Browser
+#    Launch Browser
+#    Close Web Browser
 
 #Test Mob
 #    Open app
@@ -37,10 +38,7 @@ Open app
 
 *** Keywords ***
 Launch Browser
-    SeleniumLibrary.Open Browser
-    ...    url=https://www.facebook.com/login/
-    ...    browser=chrome
-    ...    options=add_argument("${mode}"); add_argument("--no-sandbox"); add_argument('--disable-dev-shm-usage'); add_argument("--ignore-certificate-errors")
+    SeleniumLibrary.open browser    remote_url=http://localhost:4444/wd/hub    browser=chrome    desired_capabilities=${capabilities}   url=${test_url}
     SeleniumLibrary.Maximize Browser Window
 
 Close Web Browser

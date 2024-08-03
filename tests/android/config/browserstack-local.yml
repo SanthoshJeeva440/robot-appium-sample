@@ -6,6 +6,10 @@ platforms:
   - platformName: android
     deviceName: Samsung Galaxy S22 Ultra
     platformVersion: 12.0
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 120.0
 parallelsPerPlatform: 1
 geoLocation: US
 gpsLocation: -73.935242,40.730610
