@@ -1,0 +1,21 @@
+userName: mobiletest_4RJzmW
+accessKey: ASxccYy1peoyQfnjg1oy
+framework: robot
+app: apps/smc.apk
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: 12.0
+parallelsPerPlatform: 1
+geoLocation: US
+gpsLocation: -73.935242,40.730610
+timezone: New_York
+browserstackLocal: false
+browserStackLocalOptions:
+  forceLocal: true
+buildName: BrowserStack Demo Local
+projectName: BrowserStack Sample
+acceptInsecureCerts: true
+buildIdentifier: ${BUILD_NUMBER}
+debug: true
+networkLogs: true

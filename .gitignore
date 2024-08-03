@@ -1,0 +1,13 @@
+.idea/
+pabot_results/
+venv/
+*.log
+log.html
+output.xml
+report.html
+*.png
+.DS_Store
+.pabotsuitenames
+__pycache__
+browserstack.err
+venv
