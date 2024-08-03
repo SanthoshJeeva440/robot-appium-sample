@@ -30,6 +30,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        python3 -m pip install webdrivermanager
     - name: Test with robot
       run: |
         export BROWSERSTACK_CONFIG_FILE="tests/android/config/browserstack-single.yml" && browserstack-sdk robot tests/android/SingleTestAndroid.robot
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+          name: reports
+          path: reports

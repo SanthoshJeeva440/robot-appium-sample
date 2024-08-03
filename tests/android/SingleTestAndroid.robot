@@ -4,12 +4,16 @@ Library    String
 Resource   ../common/KeywordsFile.robot
 Test Setup  Open app
 Test Teardown   Close app
+Library      SeleniumLibrary    run_on_failure=SeleniumLibrary.Capture Page Screenshot
+
+*** Variables ***
+${mode}     --headless
 
 *** Test Cases ***
 Test Wiki app
-#    Search for keyword browserstack in wiki app
-#    Validate search test
     Log To Console    Test
+    Launch Browser
+    Close Web Browser
 
 *** Keywords ***
 Open app
@@ -26,6 +30,15 @@ Open app
     AppiumLibrary.Wait Until Element Is Visible    css=#inputUserName       30s
     AppiumLibrary.Input Text    css=#inputUserName    Krishankumar.mohan@mailinator.com
     AppiumLibrary.Click Element    css=ion-content>div>img
-#    AppiumLibrary.Input Text    css=#inputPassword   Testing0001#
-#    AppiumLibrary.Click Element    css=ion-content>div>img
-#    AppiumLibrary.Click Element    css=#ion_button_login
+
+
+*** Keywords ***
+Launch Browser
+    SeleniumLibrary.Open Browser
+    ...    url=https://www.facebook.com/login/
+    ...    browser=chrome
+    ...    options=add_argument("${mode}"); add_argument("--no-sandbox"); add_argument('--disable-dev-shm-usage'); add_argument("--ignore-certificate-errors")
+    SeleniumLibrary.Maximize Browser Window
+
+Close Web Browser
+    SeleniumLibrary.Close Browser

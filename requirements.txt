@@ -4,3 +4,4 @@ robotframework-pabot
 browserstack-sdk
 robotframework-seleniumlibrary
 Appium-Python-Client
+robotframework-seleniumlibrary
