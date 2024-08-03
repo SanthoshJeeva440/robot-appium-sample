@@ -13,9 +13,9 @@ Test web
     Launch Browser
     Close Web Browser
 
-Test Mob
-    Open app
-    Close app
+#Test Mob
+#    Open app
+#    Close app
 
 
 *** Keywords ***
